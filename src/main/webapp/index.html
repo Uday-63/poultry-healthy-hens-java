@@ -1,66 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthy Hens Poultry Farm</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Modern + readable -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2e7d32;      /* Deep green */
+            --secondary: #f9fbe7;     /* Light green-cream */
+            --accent: #ff9800;        /* Orange for CTA */
+            --dark: #333;
+            --light: #fff;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--secondary);
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1589924691995-400dc9ecc0af?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: white;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .navbar {
+            background-color: rgba(46, 125, 50, 0.9) !important;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: 600;
+        }
+        .btn-order {
+            background-color: var(--accent);
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        .btn-order:hover {
+            background-color: #f57c00;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card-img-top {
+            height: 220px;
+            object-fit: cover;
+        }
+        .gallery img {
+            border-radius: 12px;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-    <h1>Healthy Hens Poultry Farm</h1>
-    <p>Fresh Eggs | Healthy Chickens | Natural Farming</p>
-</header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Healthy Hens</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">Products</a>
-    <a href="#">Gallery</a>
-    <a href="#">Contact</a>
-</nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">Healthy Hens Poultry Farm</h1>
+            <p class="lead fs-4 mb-4">Fresh Daily Eggs | Premium Broiler Chicken | 100% Natural & Healthy Farming</p>
+            <button class="btn btn-order text-white" onclick="order()">Order Fresh Now →</button>
+        </div>
+    </section>
 
-<section class="about">
-    <h2>About Healthy Hens</h2>
-    <p>
-        Healthy Hens Poultry Farm provides fresh eggs and high quality chickens.
-        Our farm focuses on healthy feeding, clean environment, and natural poultry farming.
-    </p>
-</section>
+    <!-- About -->
+    <section class="py-5" id="about">
+        <div class="container text-center">
+            <h2 class="mb-4">About Healthy Hens</h2>
+            <p class="lead mx-auto" style="max-width: 800px;">
+                We are passionate about natural poultry farming in Hyderabad. Our hens are raised in a clean, stress-free environment with organic feed — no chemicals, no antibiotics. Result? Fresher eggs, tastier chicken, and healthier you!
+            </p>
+        </div>
+    </section>
 
-<section class="products">
+    <!-- Products -->
+    <section class="py-5 bg-white" id="products">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Fresh Products</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Broiler Chicken">
+                        <div class="card-body text-center">
+                            <h3>Broiler Chicken</h3>
+                            <p>Fresh, tender, farm-raised chicken available daily. Naturally grown & hygienic.</p>
+                            <p class="fw-bold">₹ 180 / kg</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1582721478774-dcfed822e4c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Farm Eggs">
+                        <div class="card-body text-center">
+                            <h3>Country Farm Eggs</h3>
+                            <p>Rich, golden-yolk organic eggs from free-range healthy hens.</p>
+                            <p class="fw-bold">₹ 90 / dozen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2>Our Products</h2>
+    <!-- Gallery -->
+    <section class="py-5" id="gallery">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Happy Farm</h2>
+            <div class="gallery row g-3 justify-content-center">
+                <div class="col-6 col-md-4"><img src="https://images.unsplash.com/photo-1505673542675-0f166374c763?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid" alt="Farm view"></div>
+                <div class="col-6 col-md-4"><img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc0af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid" alt="Chickens"></div>
+                <div class="col-6 col-md-4"><img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid" alt="Eggs"></div>
+            </div>
+        </div>
+    </section>
 
-    <div class="card">
-        <img src="images/chicken.jpg" width="200">
-        <h3>Broiler Chicken</h3>
-        <p>Fresh farm chicken available daily.</p>
-    </div>
+    <!-- Order Button & Footer -->
+    <section class="py-5 text-center bg-light">
+        <div class="container">
+            <h3 class="mb-4">Ready for Fresh Goodness?</h3>
+            <button class="btn btn-order text-white btn-lg" onclick="order()">Order Now</button>
+        </div>
+    </section>
 
-    <div class="card">
-        <img src="images/eggs.jpg" width="200">
-        <h3>Farm Eggs</h3>
-        <p>Organic eggs from healthy hens.</p>
-    </div>
+    <footer class="text-center">
+        <p class="mb-0">© 2026 Healthy Hens Poultry Farm | Hyderabad | Fresh & Natural Always</p>
+    </footer>
 
-</section>
-
-<section class="gallery">
-
-<h2>Farm Gallery</h2>
-
-<img src="images/farm.jpg" width="300">
-<img src="images/chicken.jpg" width="300">
-
-</section>
-
-<button onclick="order()">Order Now</button>
-
-<footer>
-<p>© 2026 Healthy Hens Poultry Farm</p>
-</footer>
-
-<script src="js/script.js"></script>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function order() {
+            alert("Thanks macha! Your order request noted ✅\nCall/WhatsApp: 98765 43210 for immediate delivery in Hyderabad!");
+            // Later idi dynamic cheyyochu - form modal or WhatsApp link
+        }
+    </script>
 </body>
 </html>
